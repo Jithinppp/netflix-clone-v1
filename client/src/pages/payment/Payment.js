@@ -8,17 +8,20 @@ const Payment = () => {
   const paymentHandler = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:8080/payment", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        amount: 1000,
-        name: "jithin",
-      }),
-    });
+    const response = await fetch(
+      "https://netflix-clone-v1-jithinppp.vercel.app/payment",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount: 1000,
+          name: "jithin",
+        }),
+      }
+    );
     const res = await response.json();
     console.log(res);
   };
