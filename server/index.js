@@ -10,26 +10,6 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-// exports.handler = async (event) => {
-//   try {
-//     const { amount } = JSON.parse(event.body);
-//     const paymentIntent = await stripe.paymentIntents.create({
-//       amount,
-//       currency: "inr",
-//       payment_method_types: ["card"],
-//     });
-//     return {
-//       statusCode: 200,
-//       body: JSON.stringify({ paymentIntent }),
-//     };
-//   } catch (error) {
-//     console.log({ error });
-//     return {
-//       statusCode: 400,
-//       body: JSON.stringify({ error }),
-//     };
-//   }
-// };
 app.post("/payment", async (req, res) => {
   try {
     const amount = req.body.amount;
@@ -49,7 +29,12 @@ app.post("/payment", async (req, res) => {
 });
 app.get("/payment", async (req, res) => {
   //   console.log(req.body);
-  res.send("hi");
+  res.send("hey contact me jithinppp on likedIn");
+});
+app.get("/", (req, res) => {
+  res.send(
+    "Hai there this is a simple netflix clone app react-node project with payment system by using stripe"
+  );
 });
 
 const PORT = process.env.PORT || 8080;
